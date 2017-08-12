@@ -1,0 +1,51 @@
+.parallax{
+	height: auto;
+	min-height: 650px;
+	background-image: url("../img/header.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.nav li a{
+	color: white;
+	font-size: 20px;
+}
+
+.header{
+	min-height: 300px;
+	background-image: url("../img/header.jpg");
+	background-position: center;
+}
+
+.header-text{
+	color: white;
+	text-align: center;
+	left: 50%;
+	bottom: 0;
+	position: absolute;
+	transform: translate(-50%,0);
+	z-index: 5;
+}
+
+.post{
+	box-shadow: 10px 10px 5px lightgray;
+}
+
+.detail p{
+	font-size: 20px;
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: justify;
+}
+
+.detail img{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
