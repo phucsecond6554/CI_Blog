@@ -21,26 +21,28 @@
   </tr>
 
   <?php foreach($member as $value){ ?>
-    <td><?php echo $value->id ?></td>
-    <td><?php echo $value->realname ?></td>
-    <td><?php echo $value->username ?></td>
-    <td><?php echo $value->gioitinh ?></td>
-    <td><?php echo change_date_format($value->ngaysinh) ?></td>
-    <td><?php echo $value->email ?></td>
-    <td><?php echo change_date_format($value->ngaydangky, 'd-m-Y H:i:s')?></td>
-    <td><?php echo change_date_format($value->lancuoidangnhap,'d-m-Y H:i:s') ?></td>
-    <td>
-      <form action="#" method="post">
-        <input type="hidden" name="edit_member" value="<?php echo $value->id ?>">
-        <input type="submit" name="edit_submit" value="Edit" class="btn btn-warning">
-      </form>
-    </td>
-    <td>
-      <form action="#" method="post">
-        <input type="hidden" name="delete_member" value="<?php echo $value->id ?>">
-        <input type="submit" name="delete_submit" value="Delete" class="btn btn-danger">
-      </form>
-    </td>
+    <tr>
+      <td><?php echo $value->id ?></td>
+      <td><?php echo $value->realname ?></td>
+      <td><?php echo $value->username ?></td>
+      <td><?php echo $value->gioitinh ?></td>
+      <td><?php echo change_date_format($value->ngaysinh) ?></td> <!-- Ham change_date_format trong date_helper -->
+      <td><?php echo $value->email ?></td>
+      <td><?php echo change_date_format($value->ngaydangky, 'd-m-Y H:i:s')?></td>
+      <td><?php echo change_date_format($value->lancuoidangnhap,'d-m-Y H:i:s') ?></td>
+      <td>
+        <form action="<?php echo base_url('Admin/Edit_Member/index') ?>" method="post">
+          <input type="hidden" name="edit_member" value="<?php echo $value->id ?>">
+          <input type="submit" name="edit_submit" value="Edit" class="btn btn-warning">
+        </form>
+      </td>
+      <td>
+        <form action="<?php echo base_url('Admin/Admin_List/delete') ?>" method="post">
+          <input type="hidden" name="delete_member" value="<?php echo $value->id ?>">
+          <input type="submit" name="delete_submit" value="Delete" class="btn btn-danger">
+        </form>
+      </td>
+    </tr>
 
   <?php } ?>
 

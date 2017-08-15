@@ -17,10 +17,18 @@
       * Lay thong tin user admin
     */
 
-    public function get_user(){
+    public function get_user($id = null){
       $this->db->select('id,realname,username,gioitinh,ngaysinh,email,ngaydangky,lancuoidangnhap');
-      $query = $this->db->get($this->table_name);
-      return $query->result();
+
+      if($id !== null){
+        $this->db->where('id', $id);
+        $query = $this->db->get($this->table_name);
+        return $query->row();
+      }else {
+        $query = $this->db->get($this->table_name);
+        return $query->result();
+      }
+      return null;
     }
 
     /*
@@ -39,6 +47,18 @@
     */
     public function insert_user($userdata){
       return $this->db->insert($this->table_name, $userdata);
+    }
+
+    /*
+      * Delete user
+    */
+    public function delete_user($id){
+      return $this->db->delete($this->table_name, array('id'=>$id));
+    }
+
+    public function update_user($id, $data){
+      $this->db->where('id', $id);
+      return $this->db->update($this->table_name, $data);
     }
 
     /*
@@ -61,7 +81,7 @@
     } // Function check_login
 
     /*
-      * Function nay dung de update lai thoi gian dang nhap cuoi cung 
+      * Function nay dung de update lai thoi gian dang nhap cuoi cung
     */
     public function update_login_time($username,$time){
       $this->db->where('username', $username);

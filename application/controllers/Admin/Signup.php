@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           echo "<script>alert('That bai')</script>";
         }
       }
-    }
+    } // Index
 
     /*
       * Action Kiem tra username da ton tai chua
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }else {
         return true;
       }
-    }
+    } // Action check_username
   }
 
 
