@@ -50,8 +50,7 @@
               <li><a href="<?php echo base_url('Admin/Dashboard'); ?>">Dashboard</a></li>
               <li><a href="<?php echo base_url('Admin/Post'); ?>">Post</a></li>
               <li><a href="<?php echo base_url('Admin/Allpost'); ?>">All post</a></li>
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Change web info</a></li>
+              <li><a href="<?php echo base_url('Admin/Admin_List') ?>">Account</a></li>
             </ul>
           </div> <!--Left sidebar-->
 
