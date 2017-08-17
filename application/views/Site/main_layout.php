@@ -12,6 +12,7 @@
   <script src="<?php echo base_url('js/jquery-3.2.1.min.js') ?>"></script>
   <script src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
 
+
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/pagination.css') ?>">
 
@@ -53,7 +54,9 @@
 		    <form class="navbar-form navbar-right" role="search" action="<?php echo base_url('Search') ?>"
 					method="get">
 			  <div class="form-group">
-			    <input type="text" class="form-control" placeholder="Search" name="search-key">
+			    <input type="text" class="form-control" placeholder="Search" name="search-key"
+					id="search-form" onkeyup="search_suggest()">
+					<div class="search-suggest" id="search-suggest"></div> <!--Khung goi y tim kiem-->
 			  </div>
 			  <button type="submit" class="btn btn-default">Submit</button>
 			</form>
@@ -64,7 +67,8 @@
 
 	</div> <!--Container -->
 
-	<!--Bootstrap Javascript-->
+
+	<script src="<?php echo base_url('js/search.js') ?>"></script>
 
 </body>
 </html>

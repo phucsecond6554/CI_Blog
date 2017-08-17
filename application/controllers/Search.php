@@ -28,6 +28,16 @@
 
       $this->load->view('Site/main_layout', $this->_data);
     }// Index
+
+    public function search_suggest(){
+      $search_key = $this->input->get('search_key'); // Lay noi dung tim kiem
+      $this->_data['post'] = $this->Post_Model->post_search_suggest($search_key);
+
+      //echo '<pre>';
+      //print_r($this->_data['post']);
+
+      echo json_encode($this->_data['post']);
+    }
   }
 
  ?>

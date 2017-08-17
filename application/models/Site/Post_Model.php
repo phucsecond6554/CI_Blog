@@ -46,6 +46,14 @@
       return $query->result();
     }//post_search
 
+    public function post_search_suggest($search_key){
+      $this->db->select('title, url');
+      $this->db->like('title', $search_key);
+      $query = $this->db->get($this->table_name);
+
+      return $query->result_array();
+    }
+
     public function get_detail($url){
       $this->db->where('url', $url);
       $query = $this->db->get($this->table_name);
